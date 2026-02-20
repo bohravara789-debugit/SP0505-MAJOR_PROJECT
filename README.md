@@ -22,6 +22,9 @@ RAG Document Assistant is an advanced Retrieval-Augmented Generation (RAG) syste
 - **💬 Conversational Interface**: Streamlit-based chat UI
 - **📊 Document Chunking**: Intelligent text splitting for better retrieval
 
+- ## 🚀 Live Demo
+🔗 https://sp0505-majorproject-vwthdxhxfzmkwyznczmn5o.streamlit.app/
+
 ---
 
 ## 🏗️ System Architecture
@@ -431,3 +434,4 @@ Frontend & UI/UX
 <p align="center">
   Made with ❤️ by RAG Document Assistant Team
 </p>
+
