@@ -1,20 +1,14 @@
 import streamlit as st
 import os                      # Added for absolute path handling
 import time                    # Added for smoother streaming
+import warnings
 # Suppress HuggingFace symlink warning on Windows
 os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
+warnings.filterwarnings("ignore", category=FutureWarning, module="google.generativeai")
 
-from dotenv import load_dotenv
 from ui.sidebar import render_sidebar
 from ui.styles import apply_styles
 from core.rag_pipeline import get_rag_response, index_document
-
-
-
-# ----------------------------
-# 0️⃣ Load Environment Variables
-# ----------------------------
-load_dotenv()
 
 # ✅ Base directory & Icon
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -227,3 +221,4 @@ elif page == "Chat":
             status_placeholder.empty()
 
         st.session_state.messages.append({"role": "assistant", "content": ai_response})
+
