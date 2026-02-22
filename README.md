@@ -19,11 +19,13 @@ RAG Document Assistant is an advanced Retrieval-Augmented Generation (RAG) syste
 - **🔐 Privacy-First Design**: All embeddings stored locally, no external vector databases
 - **🧠 Intelligent Retrieval**: Semantic search using Google Generative AI embeddings
 - **🌐 Optional Web Search**: DuckDuckGo integration for expanded context
-- **💬 Conversational Interface**: Streamlit-based chat UI
+- **🔄 Robust API Handling**: Automatic fallback between multiple API keys and Gemini models
+- **Conversational Interface** : Streamlit-based chat UI
 - **📊 Document Chunking**: Intelligent text splitting for better retrieval
 
 - ## 🚀 Live Demo
-🔗 https://sp0505-majorproject-vwthdxhxfzmkwyznczmn5o.streamlit.app/
+
+🔗 <https://sp0505-majorproject-vwthdxhxfzmkwyznczmn5o.streamlit.app/>
 
 ---
 
@@ -130,6 +132,8 @@ RAG-Document-Assistant/
 
    ```bash
    GOOGLE_API_KEY=your_google_api_key_here
+   # Optional backup keys for fallback
+   GOOGLE_API_KEY_1=your_backup_key_here
    ```
 
    Or set it as an environment variable:
@@ -198,12 +202,15 @@ RAG-Document-Assistant/
 
 ### Streamlit Secrets (Optional)
 
-For production deployments, you can use Streamlit's secrets management:
+For production deployments, you can use Streamlit's secrets management. You can provide multiple keys to enable automatic fallback if one key hits a rate limit.
 
 Create `.streamlit/secrets.toml`:
 
-```toml[general]
+```toml
 GOOGLE_API_KEY = "your_api_key_here"
+# Backup keys (automatically used if primary fails)
+GOOGLE_API_KEY_1 = "your_backup_key_1"
+GOOGLE_API_KEY_2 = "your_backup_key_2"
 ```
 
 ### OCR Configuration (Optional)
@@ -432,6 +439,5 @@ Frontend & UI/UX
 ---
 
 <p align="center">
-  Made with ❤️ by RAG Document Assistant Team
+  Made with ❤️ by Varaha Bohra and Team
 </p>
-
